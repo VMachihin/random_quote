@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+	line-height: 1.5;
+	font-weight: 400;
+	--container-width: 1120px;
+	--container-padding-x: 15px;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	margin: 0;
+	font-family: Montserrat, sans-serif;
+	color: #ffffff;
+}
+
+button {
+	font-family: inherit;
+}
+
+.main {
+	height: 100vh;
+	background: #ef4444;
+	transition: background 0.3s ease;
+}

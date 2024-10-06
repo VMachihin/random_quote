@@ -1,0 +1,27 @@
+.content {
+	max-width: 47rem;
+	margin: 0 auto;
+	text-align: center;
+	padding: 30px 0;
+}
+
+.title {
+	font-size: 2rem;
+	line-height: 1.1;
+	margin: 0 0 50px 0;
+}
+
+.quoteWrapper {
+	height: 10rem;
+}
+
+.quote {
+	font-size: 1rem;
+	line-height: 1.5;
+	margin: 0 0 40px 0;
+}
+
+.author {
+	font-weight: 600;
+	margin: 0 0 40px 0;
+}
