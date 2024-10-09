@@ -1,4 +1,4 @@
-const PROXI = "https://cors-anywhere.herokuapp.com/";
+const BASE_URL = "https://api.forismatic.com/api/1.0";
 
 export class ApiClient {
 	private async _checkResponse<TResult>(response: Response): Promise<TResult> {
@@ -7,6 +7,7 @@ export class ApiClient {
 		}
 
 		try {
+			console.log(response);
 			return await response.json();
 		} catch (error) {
 			console.log(error);
@@ -14,9 +15,18 @@ export class ApiClient {
 		}
 	}
 
-	public async get<TResult = unknown>(url: string): Promise<TResult> {
-		const response = await fetch(`${PROXI}${url}`, {
+	public async get<TResult = unknown>(): Promise<TResult> {
+		const params = new URLSearchParams({
+			method: "getQuote",
+			key: "random",
+			format: "json",
+			lang: "ru",
+		});
+		const response = await fetch(`${BASE_URL}/?${params.toString()}`, {
 			method: "GET",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+			},
 		});
 
 		return this._checkResponse<TResult>(response);
