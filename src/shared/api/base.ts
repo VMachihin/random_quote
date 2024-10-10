@@ -1,3 +1,4 @@
+const PROXY = "https://thingproxy.freeboard.io/fetch/";
 const BASE_URL = "https://api.forismatic.com/api/1.0";
 
 export class ApiClient {
@@ -7,7 +8,6 @@ export class ApiClient {
 		}
 
 		try {
-			console.log(response);
 			return await response.json();
 		} catch (error) {
 			console.log(error);
@@ -22,7 +22,7 @@ export class ApiClient {
 			format: "json",
 			lang: "ru",
 		});
-		const response = await fetch(`${BASE_URL}/?${params.toString()}`, {
+		const response = await fetch(`${PROXY}${BASE_URL}/?${params.toString()}`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded",
